@@ -1,0 +1,271 @@
+
+CREATE DATABASE AshlysDatabase;
+Query OK, 1 row affected (0.02 sec)
+
+mysql> SHOW DATABASES;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| AshlysDatabase     |
+| event              |
+| flight_reservation |
+| hr                 |
+| messaging          |
+| mysql              |
+| performance_schema |
+| scheduling         |
+| test               |
++--------------------+
+10 rows in set (0.16 sec)
+
+mysql> USE AshlysDatabase;
+Database changed
+
+mysql> CREATE TABLE AshlysMusicList(
+    -> personID INT NOT NULL,
+    -> artist VARCHAR(50) NOT NULL,
+    -> SongTitle VARCHAR(60) NOT NULL,
+    -> AlbumTitle VARCHAR(60), NOT NULL
+    -> SongLength INT NOT NULL);
+Query OK, 0 rows affected(0.29 sec)
+
+mysql> DESCRIBE AshlysMusicList;
++------------+-------------+------+-----+---------+-------+
+| Field      | Type        | Null | Key | Default | Extra |
++------------+-------------+------+-----+---------+-------+
+| personID   | int(11)     | NO   |     | NULL    |       |
+| artist     | varchar(50) | NO   |     | NULL    |       |
+| SongTitle  | varchar(60) | NO   |     | NULL    |       |
+| AlbumTitle | varchar(60) | NO   |     | NULL    |       |
+| SongLength | int(11)     | NO   |     | NULL    |       |
++------------+-------------+------+-----+---------+-------+
+5 rows in set (0.03 sec)
+
+mysql> INSERT INTO AshlysMusicList VALUES(1, "Drake", "Emotionless ", "Scorpion", 5.02);
+Query OK, 1 row affected (0.02 sec)
+
+mysql> INSERT INTO AshlysMusicList VALUES(2, "H.E.R", "Jungle ", "H.E.R", 5.04);
+Query OK, 1 row affected (0.02 sec)
+
+mysql> INSERT INTO AshlysMusicList VALUES(3, "Teyana Taylor ", "Gonna Love Me ", "K.T.S.E.", 2.47);
+Query OK, 1 row affected (0.02 sec)
+
+mysql> INSERT INTO AshlysMusicList VALUES(4, "Megan Thee Stallion", "Big Ole Freak ", "Tina Snow", 3.34);
+Query OK, 1 row affected (0.02 sec)
+
+mysql> INSERT INTO AshlysMusicList VALUES(5, "Chance The Rapper", "I Might Need Security ", "Chance The Rapper", 4.00);
+Query OK, 1 row affected (0.02 sec)
+
+mysql> INSERT INTO AshlysMusicList VALUES(6, "Queen Naija", "Medicine", "Queen Naija EP", 3.39);
+Query OK, 1 row affected (0.03 sec)
+
+mysql> INSERT INTO AshlysMusicList VALUES(7, "Drake", "Money In The Grave", "Scorpion", 3.25);
+Query OK, 1 row affected (0.02 sec)
+
+mysql> USE AshlysDatabase;
+Reading table information for completion of table and column names
+You can turn off this feature to get a quicker startup with -A
+
+Database changed
+mysql> SELECT * FROM AshlysMusicList;
++----------+---------------------+-----------------------+----------------------------+------------+
+| personID | artist              | SongTitle             | AlbumTitle                 | SongLength |
++----------+---------------------+-----------------------+----------------------------+------------+
+|        1 | Drake               | Emotionless           | Scorpion                   |          5 |
+|        2 | H.E.R               | Jungle                | H.E.R                      |          5 |
+|        3 | Teyana Taylor       | Gonna Love Me         | K.T.S.E.                   |          2 |
+|        4 | Megan Thee Stallion | Big Ole Freak         | Tina Snow                  |          3 |
+|        5 | Chance The Rapper   | I Might Need Security | Chance The Rapper          |          4 |
+|        6 | Queen Naija         | Medicine              | Queen Naija EP             |          3 |
+|        7 | Drake               | Money In The Grave    | The Best In The World Pack |          3 |
++----------+---------------------+-----------------------+----------------------------+------------+
+7 rows in set (0.00 sec)
+
+mysql> INSERT INTO AshlyMusicList VALUES(8, "H.E.R", "Every Kind Of Way", "H.E.R", 2.40);
+ERROR 1146 (42S02): Table 'AshlysDatabase.AshlyMusicList' doesn't exist
+mysql> INSERT INTO AshlysMusicList VALUES(8, "H.E.R", "Every Kind Of Way", "H.E.R", 2.40);
+Query OK, 1 row affected (0.03 sec)
+
+mysql> INSERT INTO AshlysMusicList VALUES(9, "Ella Mai", "Trip", "Ella Mai", 3.34);
+Query OK, 1 row affected (0.02 sec)
+
+mysql> INSERT INTO AshlysMusicList VALUES(10, "Ciara", "Body Party", "Ciara", 3.54);
+Query OK, 1 row affected (0.02 sec)
+mysql> INSERT INTO AshlyMusicList VALUES(8, "H.E.R", "Every Kind Of Way", "H.E.R", 2.40);
+ERROR 1146 (42S02): Table 'AshlysDatabase.AshlyMusicList' doesn't exist
+mysql> INSERT INTO AshlysMusicList VALUES(8, "H.E.R", "Every Kind Of Way", "H.E.R", 2.40);
+Query OK, 1 row affected (0.03 sec)
+
+mysql> INSERT INTO AshlysMusicList VALUES(9, "Ella Mai", "Trip", "Ella Mai", 3.34);
+Query OK, 1 row affected (0.02 sec)
+
+mysql> INSERT INTO AshlysMusicList VALUES(10, "Ciara", "Body Party", "Ciara", 3.54);
+Query OK, 1 row affected (0.02 sec)
+
+mysql> INSERT INTO AshlysMusicList VALUES(11, "Ludacris ft Miguel", "Good Lovin", "Ludaversal", 3.43);
+Query OK, 1 row affected (0.03 sec)
+
+mysql> INSERT INTO AshlysMusicList VALUES(12, "Ella Mai", "She Don't", "Time", 4.24);
+Query OK, 1 row affected (0.03 sec)
+
+mysql> INSERT INTO AshlysMusicList VALUES(13, "Jacob Banks", "Chainsmoking", "Village As Told By Jacob Banks", 3.12);
+Query OK, 1 row affected (0.04 sec)
+
+mysql> SELECT * FROM AshlysMusicList;
++----------+---------------------+-----------------------+--------------------------------+------------+
+| personID | artist              | SongTitle             | AlbumTitle                     | SongLength |
++----------+---------------------+-----------------------+--------------------------------+------------+
+|        1 | Drake               | Emotionless           | Scorpion                       |          5 |
+|        2 | H.E.R               | Jungle                | H.E.R                          |          5 |
+|        3 | Teyana Taylor       | Gonna Love Me         | K.T.S.E.                       |          2 |
+|        4 | Megan Thee Stallion | Big Ole Freak         | Tina Snow                      |          3 |
+|        5 | Chance The Rapper   | I Might Need Security | Chance The Rapper              |          4 |
+|        6 | Queen Naija         | Medicine              | Queen Naija EP                 |          3 |
+|        7 | Drake               | Money In The Grave    | The Best In The World Pack     |          3 |
+|        8 | H.E.R               | Every Kind Of Way     | H.E.R                          |          2 |
+|        9 | Ella Mai            | Trip                  | Ella Mai                       |          3 |
+|       10 | Ciara               | Body Party            | Ciara                          |          4 |
+|       11 | Ludacris ft Miguel  | Good Lovin            | Ludaversal                     |          3 |
+|       12 | Ella Mai            | She Don't             | Time                           |          4 |
+|       13 | Jacob Banks         | Chainsmoking          | Village As Told By Jacob Banks |          3 |
++----------+---------------------+-----------------------+--------------------------------+------------+
+13 rows in set (0.00 sec)
+
+mysql> INSERT INTO AshlysMusicList VALUES(14, "Drake", "Nice For What", "Scorpion", 3.24);
+Query OK, 1 row affected (0.03 sec)
+
+mysql> INSERT INTO AshlysMusicList VALUES(15, "N.E.R.D & Rihanna", "Lemon", "No One Ever Really Dies", 3.39);
+Query OK, 1 row affected (0.04 sec)
+
+mysql> INSERT INTO AshlysMusicList VALUES(16, "DaBaby", "Suge", "Baby On Baby", 2.43);
+Query OK, 1 row affected (0.03 sec)
+
+mysql> INSERT INTO AshlysMusicList VALUES(17, "PARTYNEXTDOOR", "Peace Of Mind", "Colours 2", 5.03);
+Query OK, 1 row affected (0.03 sec)
+
+mysql> INSERT INTO AshlysMusicList VALUES(18, "Beyonce", "All NIght", "Lemonade", 5.22);
+Query OK, 1 row affected (0.03 sec)
+
+mysql> INSERT INTO AshlysMusicList VALUES(19, "Meek Mills ft Drake", "Going Bad", "Championships", 3.00);
+Query OK, 1 row affected (0.03 sec)
+
+mysql> INSERT INTO AshlysMusicList VALUES(20, "City Girls", "Act Up", "Girl Code", 2.38);
+Query OK, 1 row affected (0.03 sec)
+
+mysql> SELECT * FROM AshlysMusicList;
++----------+---------------------+-----------------------+--------------------------------+------------+
+| personID | artist              | SongTitle             | AlbumTitle                     | SongLength |
++----------+---------------------+-----------------------+--------------------------------+------------+
+|        1 | Drake               | Emotionless           | Scorpion                       |          5 |
+|        2 | H.E.R               | Jungle                | H.E.R                          |          5 |
+|        3 | Teyana Taylor       | Gonna Love Me         | K.T.S.E.                       |          2 |
+|        4 | Megan Thee Stallion | Big Ole Freak         | Tina Snow                      |          3 |
+|        5 | Chance The Rapper   | I Might Need Security | Chance The Rapper              |          4 |
+|        6 | Queen Naija         | Medicine              | Queen Naija EP                 |          3 |
+|        7 | Drake               | Money In The Grave    | The Best In The World Pack     |          3 |
+|        8 | H.E.R               | Every Kind Of Way     | H.E.R                          |          2 |
+|        9 | Ella Mai            | Trip                  | Ella Mai                       |          3 |
+|       10 | Ciara               | Body Party            | Ciara                          |          4 |
+|       11 | Ludacris ft Miguel  | Good Lovin            | Ludaversal                     |          3 |
+|       12 | Ella Mai            | She Don't             | Time                           |          4 |
+|       13 | Jacob Banks         | Chainsmoking          | Village As Told By Jacob Banks |          3 |
+|       14 | Drake               | Nice For What         | Scorpion                       |          3 |
+|       15 | N.E.R.D & Rihanna   | Lemon                 | No One Ever Really Dies        |          3 |
+|       16 | DaBaby              | Suge                  | Baby On Baby                   |          2 |
+|       17 | PARTYNEXTDOOR       | Peace Of Mind         | Colours 2                      |          5 |
+|       18 | Beyonce             | All NIght             | Lemonade                       |          5 |
+|       19 | Meek Mills ft Drake | Going Bad             | Championships                  |          3 |
+|       20 | City Girls          | Act Up                | Girl Code                      |          2 |
++----------+---------------------+-----------------------+--------------------------------+------------+
+20 rows in set (0.00 sec)
+mysql> USE AshlysDatabase;
+Database changed
+mysql> CREATE TABLE AshlysClassicHits(
+    -> personID INT NOT NULL,
+    -> artist VARCHAR(50) NOT NULL,
+    -> SongTitle VARCHAR(60) NOT NULL,
+    -> AlbumTitle VARCHAR(60) NOT NULL,
+    -> SongLength INT NOT NULL);
+Query OK, 0 rows affected (0.31 sec)
+
+mysql> INSERT INTO AshlysClassicHits VALUES(1, "Lady Gaga", "La Vie En Rose", "A Star Is Born", 2.59);
+Query OK, 1 row affected (0.03 sec)
+
+mysql> INSERT INTO AshlysClassicHits VALUES(2, "Louis Armstrong", "La Vie En Rose", "C'Est Si Bon", 3.24);
+Query OK, 1 row affected (0.02 sec)
+
+mysql> INSERT INTO AshlysClassicHits VALUES(3, "Nat King Cole", "L-O-V-E", "L-O-V-E", 2.30);
+Query OK, 1 row affected (0.04 sec)
+
+mysql> INSERT INTO AshlysClassicHits VALUES(4, "Aretha Franklin", "You Send Me", "Aretha Now", 2.29);
+Query OK, 1 row affected (0.02 sec)
+
+mysql> INSERT INTO AshlysClassicHits VALUES(5, "Harold Melvin & The Blue Notes", "I Miss You", "Harold Melvin & The Blue Notes", 8.26);
+Query OK, 1 row affected (0.02 sec)
+
+mysql> INSERT INTO AshlysClassicHits VALUES(6, "Al Green", "How Can You Mend A Broken Heart", "Let's Stay Together", 7.00);
+Query OK, 1 row affected (0.05 sec)
+
+mysql> INSERT INTO AshlysClassicHits VALUES(7, "Louis Armstrong", "Dream A Little Dream Of Me", "What A Wonderful World", 3.16);
+Query OK, 1 row affected (0.03 sec)
+mysql> SELECT * FROM AshlysClassicHits;
++----------+--------------------------------+---------------------------------+--------------------------------+------------+
+| personID | artist                         | SongTitle                       | AlbumTitle                     | SongLength |
++----------+--------------------------------+---------------------------------+--------------------------------+------------+
+|        1 | Lady Gaga                      | La Vie En Rose                  | A Star Is Born                 |          3 |
+|        2 | Louis Armstrong                | La Vie En Rose                  | C'Est Si Bon                   |          3 |
+|        3 | Nat King Cole                  | L-O-V-E                         | L-O-V-E                        |          2 |
+|        4 | Aretha Franklin                | You Send Me                     | Aretha Now                     |          2 |
+|        5 | Harold Melvin & The Blue Notes | I Miss You                      | Harold Melvin & The Blue Notes |          8 |
+|        6 | Al Green                       | How Can You Mend A Broken Heart | Let's Stay Together            |          7 |
+|        7 | Louis Armstrong                | Dream A Little Dream Of Me      | What A Wonderful World         |          3 |
++----------+--------------------------------+---------------------------------+--------------------------------+------------+
+7 rows in set (0.01 sec)
+
+mysql> ALTER TABLE AshlysClassicHits;
+Query OK, 0 rows affected (0.07 sec)
+
+mysql> ADD YearReleased INT NOT NULL;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax
+mysql> ALTER TABLE AshlysClassicHits;
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> ADD YearReleased INT;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax
+mysql> ADD YearReleased INT(11) NOT NULL;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax
+mysql> ALTER TABLE AshlysClassicHits ADD YearReleased INT NOT NULL;
+Query OK, 7 rows affected (0.30 sec)
+Records: 7  Duplicates: 0  Warnings: 0
+
+mysql> SELECT * FROM AshlysClassicHits;
++----------+--------------------------------+---------------------------------+--------------------------------+------------+--------------+
+| personID | artist                         | SongTitle                       | AlbumTitle                     | SongLength | YearReleased |
++----------+--------------------------------+---------------------------------+--------------------------------+------------+--------------+
+|        1 | Lady Gaga                      | La Vie En Rose                  | A Star Is Born                 |          3 |            0 |
+|        2 | Louis Armstrong                | La Vie En Rose                  | C'Est Si Bon                   |          3 |            0 |
+|        3 | Nat King Cole                  | L-O-V-E                         | L-O-V-E                        |          2 |            0 |
+|        4 | Aretha Franklin                | You Send Me                     | Aretha Now                     |          2 |            0 |
+|        5 | Harold Melvin & The Blue Notes | I Miss You                      | Harold Melvin & The Blue Notes |          8 |            0 |
+|        6 | Al Green                       | How Can You Mend A Broken Heart | Let's Stay Together            |          7 |            0 |
+|        7 | Louis Armstrong                | Dream A Little Dream Of Me      | What A Wonderful World         |          3 |            0 |
++----------+--------------------------------+---------------------------------+--------------------------------+------------+--------------+
+7 rows in set (0.00 sec)
+
+mysql> INSERT INTO AshlysClassicHits(YearReleased) VALUES(1, 2018);
+ERROR 1136 (21S01): Column count doesn't match value count at row 1
+mysql> INSERT INTO AshlysClassicHits(YearReleased) VALUES(1, "Lady Gaga", 2019);
+ERROR 1136 (21S01): Column count doesn't match value count at row 1
+mysql> INSERT INTO AshlysClassicHits(YearReleased) VALUES(2018);
+Query OK, 1 row affected, 5 warnings (0.09 sec)
+mysql> SHOW TABLES;
++--------------------------+
+| Tables_in_AshlysDatabase |
++--------------------------+
+| AshlysClassicHits        |
+| AshlysMusicList          |
++--------------------------+
+2 rows in set (0.00 sec)
+
+mysql>
