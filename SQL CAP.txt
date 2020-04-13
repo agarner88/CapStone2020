@@ -1,23 +1,14 @@
-
-CREATE DATABASE AshlysDatabase;
-Query OK, 1 row affected (0.02 sec)
-
 mysql> SHOW DATABASES;
 +--------------------+
 | Database           |
 +--------------------+
 | information_schema |
 | AshlysDatabase     |
-| event              |
-| flight_reservation |
-| hr                 |
-| messaging          |
 | mysql              |
 | performance_schema |
-| scheduling         |
-| test               |
+| sys                |
 +--------------------+
-10 rows in set (0.16 sec)
+5 rows in set (0.00 sec)
 
 mysql> USE AshlysDatabase;
 Database changed
@@ -26,9 +17,9 @@ mysql> CREATE TABLE AshlysMusicList(
     -> personID INT NOT NULL,
     -> artist VARCHAR(50) NOT NULL,
     -> SongTitle VARCHAR(60) NOT NULL,
-    -> AlbumTitle VARCHAR(60), NOT NULL
-    -> SongLength INT NOT NULL);
-Query OK, 0 rows affected(0.29 sec)
+    -> AlbumTitle VARCHAR(60) NOT NULL,
+    -> SongRating INT NOT NULL);
+Query OK, 0 rows affected (0.31 sec)
 
 mysql> DESCRIBE AshlysMusicList;
 +------------+-------------+------+-----+---------+-------+
@@ -38,108 +29,57 @@ mysql> DESCRIBE AshlysMusicList;
 | artist     | varchar(50) | NO   |     | NULL    |       |
 | SongTitle  | varchar(60) | NO   |     | NULL    |       |
 | AlbumTitle | varchar(60) | NO   |     | NULL    |       |
-| SongLength | int(11)     | NO   |     | NULL    |       |
+| SongRating | int(11)     | NO   |     | NULL    |       |
 +------------+-------------+------+-----+---------+-------+
-5 rows in set (0.03 sec)
+5 rows in set (0.01 sec)
 
 mysql> INSERT INTO AshlysMusicList VALUES(1, "Drake", "Emotionless ", "Scorpion", 5.02);
-Query OK, 1 row affected (0.02 sec)
+Query OK, 1 row affected (0.09 sec)
 
 mysql> INSERT INTO AshlysMusicList VALUES(2, "H.E.R", "Jungle ", "H.E.R", 5.04);
-Query OK, 1 row affected (0.02 sec)
+Query OK, 1 row affected (0.03 sec)
 
 mysql> INSERT INTO AshlysMusicList VALUES(3, "Teyana Taylor ", "Gonna Love Me ", "K.T.S.E.", 2.47);
 Query OK, 1 row affected (0.02 sec)
 
 mysql> INSERT INTO AshlysMusicList VALUES(4, "Megan Thee Stallion", "Big Ole Freak ", "Tina Snow", 3.34);
-Query OK, 1 row affected (0.02 sec)
+Query OK, 1 row affected (0.03 sec)
 
 mysql> INSERT INTO AshlysMusicList VALUES(5, "Chance The Rapper", "I Might Need Security ", "Chance The Rapper", 4.00);
 Query OK, 1 row affected (0.02 sec)
 
 mysql> INSERT INTO AshlysMusicList VALUES(6, "Queen Naija", "Medicine", "Queen Naija EP", 3.39);
-Query OK, 1 row affected (0.03 sec)
+Query OK, 1 row affected (0.02 sec)
 
 mysql> INSERT INTO AshlysMusicList VALUES(7, "Drake", "Money In The Grave", "Scorpion", 3.25);
 Query OK, 1 row affected (0.02 sec)
 
-mysql> USE AshlysDatabase;
-Reading table information for completion of table and column names
-You can turn off this feature to get a quicker startup with -A
-
-Database changed
-mysql> SELECT * FROM AshlysMusicList;
-+----------+---------------------+-----------------------+----------------------------+------------+
-| personID | artist              | SongTitle             | AlbumTitle                 | SongLength |
-+----------+---------------------+-----------------------+----------------------------+------------+
-|        1 | Drake               | Emotionless           | Scorpion                   |          5 |
-|        2 | H.E.R               | Jungle                | H.E.R                      |          5 |
-|        3 | Teyana Taylor       | Gonna Love Me         | K.T.S.E.                   |          2 |
-|        4 | Megan Thee Stallion | Big Ole Freak         | Tina Snow                  |          3 |
-|        5 | Chance The Rapper   | I Might Need Security | Chance The Rapper          |          4 |
-|        6 | Queen Naija         | Medicine              | Queen Naija EP             |          3 |
-|        7 | Drake               | Money In The Grave    | The Best In The World Pack |          3 |
-+----------+---------------------+-----------------------+----------------------------+------------+
-7 rows in set (0.00 sec)
-
-mysql> INSERT INTO AshlyMusicList VALUES(8, "H.E.R", "Every Kind Of Way", "H.E.R", 2.40);
-ERROR 1146 (42S02): Table 'AshlysDatabase.AshlyMusicList' doesn't exist
 mysql> INSERT INTO AshlysMusicList VALUES(8, "H.E.R", "Every Kind Of Way", "H.E.R", 2.40);
-Query OK, 1 row affected (0.03 sec)
+Query OK, 1 row affected (0.02 sec)
 
 mysql> INSERT INTO AshlysMusicList VALUES(9, "Ella Mai", "Trip", "Ella Mai", 3.34);
-Query OK, 1 row affected (0.02 sec)
-
-mysql> INSERT INTO AshlysMusicList VALUES(10, "Ciara", "Body Party", "Ciara", 3.54);
-Query OK, 1 row affected (0.02 sec)
-mysql> INSERT INTO AshlyMusicList VALUES(8, "H.E.R", "Every Kind Of Way", "H.E.R", 2.40);
-ERROR 1146 (42S02): Table 'AshlysDatabase.AshlyMusicList' doesn't exist
-mysql> INSERT INTO AshlysMusicList VALUES(8, "H.E.R", "Every Kind Of Way", "H.E.R", 2.40);
 Query OK, 1 row affected (0.03 sec)
 
-mysql> INSERT INTO AshlysMusicList VALUES(9, "Ella Mai", "Trip", "Ella Mai", 3.34);
-Query OK, 1 row affected (0.02 sec)
-
 mysql> INSERT INTO AshlysMusicList VALUES(10, "Ciara", "Body Party", "Ciara", 3.54);
-Query OK, 1 row affected (0.02 sec)
+Query OK, 1 row affected (0.03 sec)
 
 mysql> INSERT INTO AshlysMusicList VALUES(11, "Ludacris ft Miguel", "Good Lovin", "Ludaversal", 3.43);
-Query OK, 1 row affected (0.03 sec)
+Query OK, 1 row affected (0.02 sec)
 
 mysql> INSERT INTO AshlysMusicList VALUES(12, "Ella Mai", "She Don't", "Time", 4.24);
-Query OK, 1 row affected (0.03 sec)
+Query OK, 1 row affected (0.02 sec)
 
 mysql> INSERT INTO AshlysMusicList VALUES(13, "Jacob Banks", "Chainsmoking", "Village As Told By Jacob Banks", 3.12);
-Query OK, 1 row affected (0.04 sec)
-
-mysql> SELECT * FROM AshlysMusicList;
-+----------+---------------------+-----------------------+--------------------------------+------------+
-| personID | artist              | SongTitle             | AlbumTitle                     | SongLength |
-+----------+---------------------+-----------------------+--------------------------------+------------+
-|        1 | Drake               | Emotionless           | Scorpion                       |          5 |
-|        2 | H.E.R               | Jungle                | H.E.R                          |          5 |
-|        3 | Teyana Taylor       | Gonna Love Me         | K.T.S.E.                       |          2 |
-|        4 | Megan Thee Stallion | Big Ole Freak         | Tina Snow                      |          3 |
-|        5 | Chance The Rapper   | I Might Need Security | Chance The Rapper              |          4 |
-|        6 | Queen Naija         | Medicine              | Queen Naija EP                 |          3 |
-|        7 | Drake               | Money In The Grave    | The Best In The World Pack     |          3 |
-|        8 | H.E.R               | Every Kind Of Way     | H.E.R                          |          2 |
-|        9 | Ella Mai            | Trip                  | Ella Mai                       |          3 |
-|       10 | Ciara               | Body Party            | Ciara                          |          4 |
-|       11 | Ludacris ft Miguel  | Good Lovin            | Ludaversal                     |          3 |
-|       12 | Ella Mai            | She Don't             | Time                           |          4 |
-|       13 | Jacob Banks         | Chainsmoking          | Village As Told By Jacob Banks |          3 |
-+----------+---------------------+-----------------------+--------------------------------+------------+
-13 rows in set (0.00 sec)
+Query OK, 1 row affected (0.02 sec)
 
 mysql> INSERT INTO AshlysMusicList VALUES(14, "Drake", "Nice For What", "Scorpion", 3.24);
-Query OK, 1 row affected (0.03 sec)
+Query OK, 1 row affected (0.02 sec)
 
 mysql> INSERT INTO AshlysMusicList VALUES(15, "N.E.R.D & Rihanna", "Lemon", "No One Ever Really Dies", 3.39);
-Query OK, 1 row affected (0.04 sec)
+Query OK, 1 row affected (0.03 sec)
 
 mysql> INSERT INTO AshlysMusicList VALUES(16, "DaBaby", "Suge", "Baby On Baby", 2.43);
-Query OK, 1 row affected (0.03 sec)
+Query OK, 1 row affected (0.02 sec)
 
 mysql> INSERT INTO AshlysMusicList VALUES(17, "PARTYNEXTDOOR", "Peace Of Mind", "Colours 2", 5.03);
 Query OK, 1 row affected (0.03 sec)
@@ -154,31 +94,32 @@ mysql> INSERT INTO AshlysMusicList VALUES(20, "City Girls", "Act Up", "Girl Code
 Query OK, 1 row affected (0.03 sec)
 
 mysql> SELECT * FROM AshlysMusicList;
-+----------+---------------------+-----------------------+--------------------------------+------------+
-| personID | artist              | SongTitle             | AlbumTitle                     | SongLength |
-+----------+---------------------+-----------------------+--------------------------------+------------+
-|        1 | Drake               | Emotionless           | Scorpion                       |          5 |
-|        2 | H.E.R               | Jungle                | H.E.R                          |          5 |
-|        3 | Teyana Taylor       | Gonna Love Me         | K.T.S.E.                       |          2 |
-|        4 | Megan Thee Stallion | Big Ole Freak         | Tina Snow                      |          3 |
-|        5 | Chance The Rapper   | I Might Need Security | Chance The Rapper              |          4 |
-|        6 | Queen Naija         | Medicine              | Queen Naija EP                 |          3 |
-|        7 | Drake               | Money In The Grave    | The Best In The World Pack     |          3 |
-|        8 | H.E.R               | Every Kind Of Way     | H.E.R                          |          2 |
-|        9 | Ella Mai            | Trip                  | Ella Mai                       |          3 |
-|       10 | Ciara               | Body Party            | Ciara                          |          4 |
-|       11 | Ludacris ft Miguel  | Good Lovin            | Ludaversal                     |          3 |
-|       12 | Ella Mai            | She Don't             | Time                           |          4 |
-|       13 | Jacob Banks         | Chainsmoking          | Village As Told By Jacob Banks |          3 |
-|       14 | Drake               | Nice For What         | Scorpion                       |          3 |
-|       15 | N.E.R.D & Rihanna   | Lemon                 | No One Ever Really Dies        |          3 |
-|       16 | DaBaby              | Suge                  | Baby On Baby                   |          2 |
-|       17 | PARTYNEXTDOOR       | Peace Of Mind         | Colours 2                      |          5 |
-|       18 | Beyonce             | All NIght             | Lemonade                       |          5 |
-|       19 | Meek Mills ft Drake | Going Bad             | Championships                  |          3 |
-|       20 | City Girls          | Act Up                | Girl Code                      |          2 |
-+----------+---------------------+-----------------------+--------------------------------+------------+
++----------+---------------------+------------------------+--------------------------------+------------+
+| personID | artist              | SongTitle              | AlbumTitle                     | SongRating |
++----------+---------------------+------------------------+--------------------------------+------------+
+|        1 | Drake               | Emotionless            | Scorpion                       |          5 |
+|        2 | H.E.R               | Jungle                 | H.E.R                          |          5 |
+|        3 | Teyana Taylor       | Gonna Love Me          | K.T.S.E.                       |          2 |
+|        4 | Megan Thee Stallion | Big Ole Freak          | Tina Snow                      |          3 |
+|        5 | Chance The Rapper   | I Might Need Security  | Chance The Rapper              |          4 |
+|        6 | Queen Naija         | Medicine               | Queen Naija EP                 |          3 |
+|        7 | Drake               | Money In The Grave     | Scorpion                       |          3 |
+|        8 | H.E.R               | Every Kind Of Way      | H.E.R                          |          2 |
+|        9 | Ella Mai            | Trip                   | Ella Mai                       |          3 |
+|       10 | Ciara               | Body Party             | Ciara                          |          4 |
+|       11 | Ludacris ft Miguel  | Good Lovin             | Ludaversal                     |          3 |
+|       12 | Ella Mai            | She Don't              | Time                           |          4 |
+|       13 | Jacob Banks         | Chainsmoking           | Village As Told By Jacob Banks |          3 |
+|       14 | Drake               | Nice For What          | Scorpion                       |          3 |
+|       15 | N.E.R.D & Rihanna   | Lemon                  | No One Ever Really Dies        |          3 |
+|       16 | DaBaby              | Suge                   | Baby On Baby                   |          2 |
+|       17 | PARTYNEXTDOOR       | Peace Of Mind          | Colours 2                      |          5 |
+|       18 | Beyonce             | All NIght              | Lemonade                       |          5 |
+|       19 | Meek Mills ft Drake | Going Bad              | Championships                  |          3 |
+|       20 | City Girls          | Act Up                 | Girl Code                      |          2 |
++----------+---------------------+------------------------+--------------------------------+------------+
 20 rows in set (0.00 sec)
+
 mysql> USE AshlysDatabase;
 Database changed
 mysql> CREATE TABLE AshlysClassicHits(
@@ -186,17 +127,16 @@ mysql> CREATE TABLE AshlysClassicHits(
     -> artist VARCHAR(50) NOT NULL,
     -> SongTitle VARCHAR(60) NOT NULL,
     -> AlbumTitle VARCHAR(60) NOT NULL,
-    -> SongLength INT NOT NULL);
-Query OK, 0 rows affected (0.31 sec)
-
+    -> AlbumRating INT NOT NULL);
+Query OK, 0 rows affected (0.26 sec)
 mysql> INSERT INTO AshlysClassicHits VALUES(1, "Lady Gaga", "La Vie En Rose", "A Star Is Born", 2.59);
 Query OK, 1 row affected (0.03 sec)
 
 mysql> INSERT INTO AshlysClassicHits VALUES(2, "Louis Armstrong", "La Vie En Rose", "C'Est Si Bon", 3.24);
-Query OK, 1 row affected (0.02 sec)
+Query OK, 1 row affected (0.03 sec)
 
 mysql> INSERT INTO AshlysClassicHits VALUES(3, "Nat King Cole", "L-O-V-E", "L-O-V-E", 2.30);
-Query OK, 1 row affected (0.04 sec)
+Query OK, 1 row affected (0.03 sec)
 
 mysql> INSERT INTO AshlysClassicHits VALUES(4, "Aretha Franklin", "You Send Me", "Aretha Now", 2.29);
 Query OK, 1 row affected (0.02 sec)
@@ -205,67 +145,438 @@ mysql> INSERT INTO AshlysClassicHits VALUES(5, "Harold Melvin & The Blue Notes",
 Query OK, 1 row affected (0.02 sec)
 
 mysql> INSERT INTO AshlysClassicHits VALUES(6, "Al Green", "How Can You Mend A Broken Heart", "Let's Stay Together", 7.00);
-Query OK, 1 row affected (0.05 sec)
+Query OK, 1 row affected (0.04 sec)
 
 mysql> INSERT INTO AshlysClassicHits VALUES(7, "Louis Armstrong", "Dream A Little Dream Of Me", "What A Wonderful World", 3.16);
+Query OK, 1 row affected (0.02 sec)
+
+mysql> INSERT INTO AshlysClassicHits VALUES(8, "Marvin Gaye", "Ain't No Mountain High Enough", "United", 2.28);
 Query OK, 1 row affected (0.03 sec)
+
+mysql> INSERT INTO AshlysClassicHits VALUES(9, "Stevie Wonder", "Sir Duke", "Stevie Wonder At The Close Of A Century", 3.52);
+Query OK, 1 row affected (0.03 sec)
+
+mysql> INSERT INTO AshlysClassicHits VALUES(10, "Nina Simone", "Feeling Good", "Gold", 2.52);
+Query OK, 1 row affected (0.03 sec)
+
 mysql> SELECT * FROM AshlysClassicHits;
-+----------+--------------------------------+---------------------------------+--------------------------------+------------+
-| personID | artist                         | SongTitle                       | AlbumTitle                     | SongLength |
-+----------+--------------------------------+---------------------------------+--------------------------------+------------+
-|        1 | Lady Gaga                      | La Vie En Rose                  | A Star Is Born                 |          3 |
-|        2 | Louis Armstrong                | La Vie En Rose                  | C'Est Si Bon                   |          3 |
-|        3 | Nat King Cole                  | L-O-V-E                         | L-O-V-E                        |          2 |
-|        4 | Aretha Franklin                | You Send Me                     | Aretha Now                     |          2 |
-|        5 | Harold Melvin & The Blue Notes | I Miss You                      | Harold Melvin & The Blue Notes |          8 |
-|        6 | Al Green                       | How Can You Mend A Broken Heart | Let's Stay Together            |          7 |
-|        7 | Louis Armstrong                | Dream A Little Dream Of Me      | What A Wonderful World         |          3 |
-+----------+--------------------------------+---------------------------------+--------------------------------+------------+
-7 rows in set (0.01 sec)
++----------+--------------------------------+---------------------------------+-----------------------------------------+-------------+
+| personID | artist                         | SongTitle                       | AlbumTitle                              | AlbumRating |
++----------+--------------------------------+---------------------------------+-----------------------------------------+-------------+
+|        1 | Lady Gaga                      | La Vie En Rose                  | A Star Is Born                          |           3 |
+|        2 | Louis Armstrong                | La Vie En Rose                  | C'Est Si Bon                            |           3 |
+|        3 | Nat King Cole                  | L-O-V-E                         | L-O-V-E                                 |           2 |
+|        4 | Aretha Franklin                | You Send Me                     | Aretha Now                              |           2 |
+|        5 | Harold Melvin & The Blue Notes | I Miss You                      | Harold Melvin & The Blue Notes          |           8 |
+|        6 | Al Green                       | How Can You Mend A Broken Heart | Let's Stay Together                     |           7 |
+|        7 | Louis Armstrong                | Dream A Little Dream Of Me      | What A Wonderful World                  |           3 |
+|        8 | Marvin Gaye                    | Ain't No Mountain High Enough   | United                                  |           2 |
+|        9 | Stevie Wonder                  | Sir Duke                        | Stevie Wonder At The Close Of A Century |           4 |
+|       10 | Nina Simone                    | Feeling Good                    | Gold                                    |           3 |
++----------+--------------------------------+---------------------------------+-----------------------------------------+-------------+
+10 rows in set (0.00 sec)
 
-mysql> ALTER TABLE AshlysClassicHits;
-Query OK, 0 rows affected (0.07 sec)
+mysql> SELECT * FROM AshlysMusicList ORDER BY SongRating;
++----------+---------------------+------------------------+--------------------------------+------------+
+| personID | artist              | SongTitle              | AlbumTitle                     | SongRating |
++----------+---------------------+------------------------+--------------------------------+------------+
+|       20 | City Girls          | Act Up                 | Girl Code                      |          2 |
+|        3 | Teyana Taylor       | Gonna Love Me          | K.T.S.E.                       |          2 |
+|       16 | DaBaby              | Suge                   | Baby On Baby                   |          2 |
+|        8 | H.E.R               | Every Kind Of Way      | H.E.R                          |          2 |
+|       11 | Ludacris ft Miguel  | Good Lovin             | Ludaversal                     |          3 |
+|       19 | Meek Mills ft Drake | Going Bad              | Championships                  |          3 |
+|       15 | N.E.R.D & Rihanna   | Lemon                  | No One Ever Really Dies        |          3 |
+|       14 | Drake               | Nice For What          | Scorpion                       |          3 |
+|       13 | Jacob Banks         | Chainsmoking           | Village As Told By Jacob Banks |          3 |
+|        9 | Ella Mai            | Trip                   | Ella Mai                       |          3 |
+|        7 | Drake               | Money In The Grave     | Scorpion                       |          3 |
+|        6 | Queen Naija         | Medicine               | Queen Naija EP                 |          3 |
+|        4 | Megan Thee Stallion | Big Ole Freak          | Tina Snow                      |          3 |
+|       10 | Ciara               | Body Party             | Ciara                          |          4 |
+|       12 | Ella Mai            | She Don't              | Time                           |          4 |
+|        5 | Chance The Rapper   | I Might Need Security  | Chance The Rapper              |          4 |
+|        1 | Drake               | Emotionless            | Scorpion                       |          5 |
+|       17 | PARTYNEXTDOOR       | Peace Of Mind          | Colours 2                      |          5 |
+|       18 | Beyonce             | All NIght              | Lemonade                       |          5 |
+|        2 | H.E.R               | Jungle                 | H.E.R                          |          5 |
++----------+---------------------+------------------------+--------------------------------+------------+
+20 rows in set (0.16 sec)
 
-mysql> ADD YearReleased INT NOT NULL;
-ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax
-mysql> ALTER TABLE AshlysClassicHits;
+mysql> SELECT * FROM AshlysMusicList WHERE SongRating='3';
++----------+---------------------+--------------------+--------------------------------+------------+
+| personID | artist              | SongTitle          | AlbumTitle                     | SongRating |
++----------+---------------------+--------------------+--------------------------------+------------+
+|        4 | Megan Thee Stallion | Big Ole Freak      | Tina Snow                      |          3 |
+|        6 | Queen Naija         | Medicine           | Queen Naija EP                 |          3 |
+|        7 | Drake               | Money In The Grave | Scorpion                       |          3 |
+|        9 | Ella Mai            | Trip               | Ella Mai                       |          3 |
+|       11 | Ludacris ft Miguel  | Good Lovin         | Ludaversal                     |          3 |
+|       13 | Jacob Banks         | Chainsmoking       | Village As Told By Jacob Banks |          3 |
+|       14 | Drake               | Nice For What      | Scorpion                       |          3 |
+|       15 | N.E.R.D & Rihanna   | Lemon              | No One Ever Really Dies        |          3 |
+|       19 | Meek Mills ft Drake | Going Bad          | Championships                  |          3 |
++----------+---------------------+--------------------+--------------------------------+------------+
+9 rows in set (0.09 sec)
+
+mysql> SELECT * FROM AshlysMusicList WHERE artist='Drake';
++----------+--------+--------------------+------------+------------+
+| personID | artist | SongTitle          | AlbumTitle | SongRating |
++----------+--------+--------------------+------------+------------+
+|        1 | Drake  | Emotionless        | Scorpion   |          5 |
+|        7 | Drake  | Money In The Grave | Scorpion   |          3 |
+|       14 | Drake  | Nice For What      | Scorpion   |          3 |
++----------+--------+--------------------+------------+------------+
+3 rows in set (0.00 sec)
+
+mysql> INSERT INTO AshlysMusicList VALUES(21, "Drake", "Girls Need Love", "Last Day Of Summer", 5.00);
+Query OK, 1 row affected (0.05 sec)
+
+mysql> INSERT INTO AshlysMusicList VALUES(22, "Drake", "How Bout Now", "6 God", 4.0);
+Query OK, 1 row affected (0.03 sec)
+
+mysql> SELECT * FROM AshlysMusicList WHERE artist='Drake';
++----------+--------+--------------------+--------------------+------------+
+| personID | artist | SongTitle          | AlbumTitle         | SongRating |
++----------+--------+--------------------+--------------------+------------+
+|        1 | Drake  | Emotionless        | Scorpion           |          5 |
+|        7 | Drake  | Money In The Grave | Scorpion           |          3 |
+|       14 | Drake  | Nice For What      | Scorpion           |          3 |
+|       21 | Drake  | Girls Need Love    | Last Day Of Summer |          5 |
+|       22 | Drake  | How Bout Now       | 6 God              |          4 |
++----------+--------+--------------------+--------------------+------------+
+5 rows in set (0.00 sec)
+mysql> ALTER TABLE "AshlysClassicHits"
+    -> RENAME COLUMN "SongTitle" TO "SongTit2";
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '"AshlysClassicHits"
+RENAME COLUMN "SongTitle" TO "SongTit2"' at line 1
+mysql> ALTER TABLE AshlysClassicHits CHANGE SongTitle SongTit2 CHAR(50);
+Query OK, 10 rows affected (0.99 sec)
+Records: 10  Duplicates: 0  Warnings: 0
+
+mysql> ALTER TABLE AshlysClassicHits CHANGE AlbumTitle AlbumTit2 CHAR(50);
+Query OK, 10 rows affected (0.58 sec)
+Records: 10  Duplicates: 0  Warnings: 0
+
+mysql> ALTER TABLE AshlysClassicHits CHANGE artist ArtistID CHAR(50);
+Query OK, 10 rows affected (0.68 sec)
+Records: 10  Duplicates: 0  Warnings: 0
+
+mysql> ALTER TABLE AshlysClassicHits CHANGE personID SongID CHAR(50);
+Query OK, 10 rows affected (0.57 sec)
+Records: 10  Duplicates: 0  Warnings: 0
+
+mysql> SELECT * FROM AshlysClassicHits;
++--------+--------------------------------+---------------------------------+-----------------------------------------+-------------+
+| SongID | ArtistID                       | SongTit2                        | AlbumTit2                               | AlbumRating |
++--------+--------------------------------+---------------------------------+-----------------------------------------+-------------+
+| 1      | Lady Gaga                      | La Vie En Rose                  | A Star Is Born                          |           3 |
+| 2      | Louis Armstrong                | La Vie En Rose                  | C'Est Si Bon                            |           3 |
+| 3      | Nat King Cole                  | L-O-V-E                         | L-O-V-E                                 |           2 |
+| 4      | Aretha Franklin                | You Send Me                     | Aretha Now                              |           2 |
+| 5      | Harold Melvin & The Blue Notes | I Miss You                      | Harold Melvin & The Blue Notes          |           8 |
+| 6      | Al Green                       | How Can You Mend A Broken Heart | Let's Stay Together                     |           7 |
+| 7      | Louis Armstrong                | Dream A Little Dream Of Me      | What A Wonderful World                  |           3 |
+| 8      | Marvin Gaye                    | Ain't No Mountain High Enough   | United                                  |           2 |
+| 9      | Stevie Wonder                  | Sir Duke                        | Stevie Wonder At The Close Of A Century |           4 |
+| 10     | Nina Simone                    | Feeling Good                    | Gold                                    |           3 |
++--------+--------------------------------+---------------------------------+-----------------------------------------+-------------+
+10 rows in set (0.00 sec)
+
+mysql> SELECT user FROM user;
++------------------+
+| user             |
++------------------+
+| debian-sys-maint |
+| mysql.session    |
+| mysql.sys        |
+| root             |
++------------------+
+4 rows in set (0.00 sec)
+
+mysql> SELECT user FROM user;
++------------------+
+| user             |
++------------------+
+| agarner-2        |
+| debian-sys-maint |
+| mysql.session    |
+| mysql.sys        |
+| root             |
++------------------+
+5 rows in set (0.01 sec)
+mysql> GRANT ALL PRIVILEGES ON AshlysDatabase.* TO 'agarner-2'@'localhost' IDENTIFIED BY 'pineapples';
+Query OK, 0 rows affected, 1 warning (0.20 sec)
+
+mysql> SHOW GRANTS FOR 'agarner-2'@'localhost';
++-----------------------------------------------------------------------+
+| Grants for agarner-2@localhost                                        |
++-----------------------------------------------------------------------+
+| GRANT USAGE ON *.* TO 'agarner-2'@'localhost'                         |
+| GRANT ALL PRIVILEGES ON `AshlysDatabase`.* TO 'agarner-2'@'localhost' |
++-----------------------------------------------------------------------+
+2 rows in set (0.39 sec)
+
+mysql> GRANT ALL PRIVILEGES ON AshlysDatabase.AshlysMusicList TO 'agarner-2'@'localhost' IDENTIFIED BY 'pineapples';
+Query OK, 0 rows affected, 1 warning (0.05 sec)
+
+mysql> SHOW GRANTS FOR 'agarner-2'@'localhost';
++---------------------------------------------------------------------------------------+
+| Grants for agarner-2@localhost                                                        |
++---------------------------------------------------------------------------------------+
+| GRANT USAGE ON *.* TO 'agarner-2'@'localhost'                                         |
+| GRANT ALL PRIVILEGES ON `AshlysDatabase`.`AshlysMusicList` TO 'agarner-2'@'localhost' |
++---------------------------------------------------------------------------------------+
+2 rows in set (0.00 sec)
+
+mysql> SELECT user FROM user;
++------------------+
+| user             |
++------------------+         
+| agarner-2        |      
+| debian-sys-maint |
+| mysql.session    |
+| mysql.sys        |
+| root             |
++------------------+
+5 rows in set (0.01 sec)
+
+
+mysql> CREATE USER 'ash-garn'@'localhost' IDENTIFIED BY 'user_password';
 Query OK, 0 rows affected (0.00 sec)
 
-mysql> ADD YearReleased INT;
-ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax
-mysql> ADD YearReleased INT(11) NOT NULL;
-ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax
-mysql> ALTER TABLE AshlysClassicHits ADD YearReleased INT NOT NULL;
-Query OK, 7 rows affected (0.30 sec)
-Records: 7  Duplicates: 0  Warnings: 0
+mysql> SELECT user FROM user;
++------------------+
+| user             |
++------------------+
+| agarner-2        |       
+| ash-garn         |
+| debian-sys-maint |
+| mysql.session    |
+| mysql.sys        |
+| root             |
++------------------+
+6 rows in set (0.00 sec)
 
-mysql> SELECT * FROM AshlysClassicHits;
-+----------+--------------------------------+---------------------------------+--------------------------------+------------+--------------+
-| personID | artist                         | SongTitle                       | AlbumTitle                     | SongLength | YearReleased |
-+----------+--------------------------------+---------------------------------+--------------------------------+------------+--------------+
-|        1 | Lady Gaga                      | La Vie En Rose                  | A Star Is Born                 |          3 |            0 |
-|        2 | Louis Armstrong                | La Vie En Rose                  | C'Est Si Bon                   |          3 |            0 |
-|        3 | Nat King Cole                  | L-O-V-E                         | L-O-V-E                        |          2 |            0 |
-|        4 | Aretha Franklin                | You Send Me                     | Aretha Now                     |          2 |            0 |
-|        5 | Harold Melvin & The Blue Notes | I Miss You                      | Harold Melvin & The Blue Notes |          8 |            0 |
-|        6 | Al Green                       | How Can You Mend A Broken Heart | Let's Stay Together            |          7 |            0 |
-|        7 | Louis Armstrong                | Dream A Little Dream Of Me      | What A Wonderful World         |          3 |            0 |
-+----------+--------------------------------+---------------------------------+--------------------------------+------------+--------------+
-7 rows in set (0.00 sec)
+mysql> GRANT SELECT ON AshlysClassicHits.* TO 'ash-garn'@'localhost';
+Query OK, 0 rows affected (0.00 sec)
 
-mysql> INSERT INTO AshlysClassicHits(YearReleased) VALUES(1, 2018);
-ERROR 1136 (21S01): Column count doesn't match value count at row 1
-mysql> INSERT INTO AshlysClassicHits(YearReleased) VALUES(1, "Lady Gaga", 2019);
-ERROR 1136 (21S01): Column count doesn't match value count at row 1
-mysql> INSERT INTO AshlysClassicHits(YearReleased) VALUES(2018);
-Query OK, 1 row affected, 5 warnings (0.09 sec)
-mysql> SHOW TABLES;
-+--------------------------+
-| Tables_in_AshlysDatabase |
-+--------------------------+
-| AshlysClassicHits        |
-| AshlysMusicList          |
-+--------------------------+
+mysql> SHOW GRANTS FOR 'ash-garn'@'localhost';
++-----------------------------------------------------------------+
+| Grants for ash-garn@localhost                                   |
++-----------------------------------------------------------------+
+| GRANT USAGE ON *.* TO 'ash-garn'@'localhost'                    |
+| GRANT SELECT ON `AshlysClassicHits`.* TO 'ash-garn'@'localhost' |
++-----------------------------------------------------------------+
+2 rows in set (0.00 sec)
+
+mysql> SELECT * FROM AshlysClassicHits UNION SELECT * FROM AshlysMusicList;
++--------+--------------------------------+---------------------------------+-----------------------------------------+-------------+
+| SongID | ArtistID                       | SongTit2                        | AlbumTit2                               | AlbumRating |
++--------+--------------------------------+---------------------------------+-----------------------------------------+-------------+
+| 1      | Lady Gaga                      | La Vie En Rose                  | A Star Is Born                          |           3 |
+| 2      | Louis Armstrong                | La Vie En Rose                  | C'Est Si Bon                            |           3 |
+| 3      | Nat King Cole                  | L-O-V-E                         | L-O-V-E                                 |           2 |
+| 4      | Aretha Franklin                | You Send Me                     | Aretha Now                              |           2 |
+| 5      | Harold Melvin & The Blue Notes | I Miss You                      | Harold Melvin & The Blue Notes          |           8 |
+| 6      | Al Green                       | How Can You Mend A Broken Heart | Let's Stay Together                     |           7 |
+| 7      | Louis Armstrong                | Dream A Little Dream Of Me      | What A Wonderful World                  |           3 |
+| 8      | Marvin Gaye                    | Ain't No Mountain High Enough   | United                                  |           2 |
+| 9      | Stevie Wonder                  | Sir Duke                        | Stevie Wonder At The Close Of A Century |           4 |
+| 10     | Nina Simone                    | Feeling Good                    | Gold                                    |           3 |
+| 11     | Al Green                       | Love and Happiness              | I'm Still In Love With You              |           5 |
+| 1      | Drake                          | Emotionless                     | Scorpion                                |           5 |
+| 2      | H.E.R                          | Jungle                          | H.E.R                                   |           5 |
+| 3      | Teyana Taylor                  | Gonna Love Me                   | K.T.S.E.                                |           2 |
+| 4      | Megan Thee Stallion            | Big Ole Freak                   | Tina Snow                               |           3 |
+| 5      | Chance The Rapper              | I Might Need Security           | Chance The Rapper                       |           4 |
+| 6      | Queen Naija                    | Medicine                        | Queen Naija EP                          |           3 |
+| 7      | Drake                          | Money In The Grave              | Scorpion                                |           3 |
+| 8      | H.E.R                          | Every Kind Of Way               | H.E.R                                   |           2 |
+| 9      | Ella Mai                       | Trip                            | Ella Mai                                |           3 |
+| 10     | Ciara                          | Body Party                      | Ciara                                   |           4 |
+| 11     | Ludacris ft Miguel             | Good Lovin                      | Ludaversal                              |           3 |
+| 12     | Ella Mai                       | She Don't                       | Time                                    |           4 |
+| 13     | Jacob Banks                    | Chainsmoking                    | Village As Told By Jacob Banks          |           3 |
+| 14     | Drake                          | Nice For What                   | Scorpion                                |           3 |
+| 15     | N.E.R.D & Rihanna              | Lemon                           | No One Ever Really Dies                 |           3 |
+| 16     | DaBaby                         | Suge                            | Baby On Baby                            |           2 |
+| 17     | PARTYNEXTDOOR                  | Peace Of Mind                   | Colours 2                               |           5 |
+| 18     | Beyonce                        | All NIght                       | Lemonade                                |           5 |
+| 19     | Meek Mills ft Drake            | Going Bad                       | Championships                           |           3 |
+| 20     | City Girls                     | Act Up                          | Girl Code                               |           2 |
+| 21     | Drake                          | Girls Need Love                 | Last Day Of Summer                      |           5 |
+| 22     | Drake                          | How Bout Now                    | 6 God                                   |           4 |
++--------+--------------------------------+---------------------------------+-----------------------------------------+-------------+
+33 rows in set (0.00 sec)
+mysql> INSERT INTO AshlysMusicList SELECT * FROM AshlysClassicHits;
+Query OK, 11 rows affected (0.27 sec)
+Records: 11  Duplicates: 0  Warnings: 0
+
+mysql> SELECT * FROM AshlysMusicList;
++----------+--------------------------------+---------------------------------+-----------------------------------------+------------+
+| personID | artist                         | SongTitle                       | AlbumTitle                              | SongRating |
++----------+--------------------------------+---------------------------------+-----------------------------------------+------------+
+|        1 | Drake                          | Emotionless                     | Scorpion                                |          5 |
+|        2 | H.E.R                          | Jungle                          | H.E.R                                   |          5 |
+|        3 | Teyana Taylor                  | Gonna Love Me                   | K.T.S.E.                                |          2 |
+|        4 | Megan Thee Stallion            | Big Ole Freak                   | Tina Snow                               |          3 |
+|        5 | Chance The Rapper              | I Might Need Security           | Chance The Rapper                       |          4 |
+|        6 | Queen Naija                    | Medicine                        | Queen Naija EP                          |          3 |
+|        7 | Drake                          | Money In The Grave              | Scorpion                                |          3 |
+|        8 | H.E.R                          | Every Kind Of Way               | H.E.R                                   |          2 |
+|        9 | Ella Mai                       | Trip                            | Ella Mai                                |          3 |
+|       10 | Ciara                          | Body Party                      | Ciara                                   |          4 |
+|       11 | Ludacris ft Miguel             | Good Lovin                      | Ludaversal                              |          3 |
+|       12 | Ella Mai                       | She Don't                       | Time                                    |          4 |
+|       13 | Jacob Banks                    | Chainsmoking                    | Village As Told By Jacob Banks          |          3 |
+|       14 | Drake                          | Nice For What                   | Scorpion                                |          3 |
+|       15 | N.E.R.D & Rihanna              | Lemon                           | No One Ever Really Dies                 |          3 |
+|       16 | DaBaby                         | Suge                            | Baby On Baby                            |          2 |
+|       17 | PARTYNEXTDOOR                  | Peace Of Mind                   | Colours 2                               |          5 |
+|       18 | Beyonce                        | All NIght                       | Lemonade                                |          5 |
+|       19 | Meek Mills ft Drake            | Going Bad                       | Championships                           |          3 |
+|       20 | City Girls                     | Act Up                          | Girl Code                               |          2 |
+|       21 | Drake                          | Girls Need Love                 | Last Day Of Summer                      |          5 |
+|       22 | Drake                          | How Bout Now                    | 6 God                                   |          4 |
+|        1 | Lady Gaga                      | La Vie En Rose                  | A Star Is Born                          |          3 |
+|        2 | Louis Armstrong                | La Vie En Rose                  | C'Est Si Bon                            |          3 |
+|        3 | Nat King Cole                  | L-O-V-E                         | L-O-V-E                                 |          2 |
+|        4 | Aretha Franklin                | You Send Me                     | Aretha Now                              |          2 |
+|        5 | Harold Melvin & The Blue Notes | I Miss You                      | Harold Melvin & The Blue Notes          |          8 |
+|        6 | Al Green                       | How Can You Mend A Broken Heart | Let's Stay Together                     |          7 |
+|        7 | Louis Armstrong                | Dream A Little Dream Of Me      | What A Wonderful World                  |          3 |
+|        8 | Marvin Gaye                    | Ain't No Mountain High Enough   | United                                  |          2 |
+|        9 | Stevie Wonder                  | Sir Duke                        | Stevie Wonder At The Close Of A Century |          4 |
+|       10 | Nina Simone                    | Feeling Good                    | Gold                                    |          3 |
+|       11 | Al Green                       | Love and Happiness              | I'm Still In Love With You              |          5 |
++----------+--------------------------------+---------------------------------+-----------------------------------------+------------+
+33 rows in set (0.00 sec)
+
+mysql> SELECT * FROM AshlysMusicList ORDER BY artist;
++----------+--------------------------------+---------------------------------+-----------------------------------------+------------+
+| personID | artist                         | SongTitle                       | AlbumTitle                              | SongRating |
++----------+--------------------------------+---------------------------------+-----------------------------------------+------------+
+|       11 | Al Green                       | Love and Happiness              | I'm Still In Love With You              |          5 |
+|        6 | Al Green                       | How Can You Mend A Broken Heart | Let's Stay Together                     |          7 |
+|        4 | Aretha Franklin                | You Send Me                     | Aretha Now                              |          2 |
+|       18 | Beyonce                        | All NIght                       | Lemonade                                |          5 |
+|        5 | Chance The Rapper              | I Might Need Security           | Chance The Rapper                       |          4 |
+|       10 | Ciara                          | Body Party                      | Ciara                                   |          4 |
+|       20 | City Girls                     | Act Up                          | Girl Code                               |          2 |
+|       16 | DaBaby                         | Suge                            | Baby On Baby                            |          2 |
+|        1 | Drake                          | Emotionless                     | Scorpion                                |          5 |
+|        7 | Drake                          | Money In The Grave              | Scorpion                                |          3 |
+|       22 | Drake                          | How Bout Now                    | 6 God                                   |          4 |
+|       21 | Drake                          | Girls Need Love                 | Last Day Of Summer                      |          5 |
+|       14 | Drake                          | Nice For What                   | Scorpion                                |          3 |
+|        9 | Ella Mai                       | Trip                            | Ella Mai                                |          3 |
+|       12 | Ella Mai                       | She Don't                       | Time                                    |          4 |
+|        2 | H.E.R                          | Jungle                          | H.E.R                                   |          5 |
+|        8 | H.E.R                          | Every Kind Of Way               | H.E.R                                   |          2 |
+|        5 | Harold Melvin & The Blue Notes | I Miss You                      | Harold Melvin & The Blue Notes          |          8 |
+|       13 | Jacob Banks                    | Chainsmoking                    | Village As Told By Jacob Banks          |          3 |
+|        1 | Lady Gaga                      | La Vie En Rose                  | A Star Is Born                          |          3 |
+|        2 | Louis Armstrong                | La Vie En Rose                  | C'Est Si Bon                            |          3 |
+|        7 | Louis Armstrong                | Dream A Little Dream Of Me      | What A Wonderful World                  |          3 |
+|       11 | Ludacris ft Miguel             | Good Lovin                      | Ludaversal                              |          3 |
+|        8 | Marvin Gaye                    | Ain't No Mountain High Enough   | United                                  |          2 |
+|       19 | Meek Mills ft Drake            | Going Bad                       | Championships                           |          3 |
+|        4 | Megan Thee Stallion            | Big Ole Freak                   | Tina Snow                               |          3 |
+|       15 | N.E.R.D & Rihanna              | Lemon                           | No One Ever Really Dies                 |          3 |
+|        3 | Nat King Cole                  | L-O-V-E                         | L-O-V-E                                 |          2 |
+|       10 | Nina Simone                    | Feeling Good                    | Gold                                    |          3 |
+|       17 | PARTYNEXTDOOR                  | Peace Of Mind                   | Colours 2                               |          5 |
+|        6 | Queen Naija                    | Medicine                        | Queen Naija EP                          |          3 |
+|        9 | Stevie Wonder                  | Sir Duke                        | Stevie Wonder At The Close Of A Century |          4 |
+|        3 | Teyana Taylor                  | Gonna Love Me                   | K.T.S.E.                                |          2 |
++----------+--------------------------------+---------------------------------+-----------------------------------------+------------+
+33 rows in set (0.00 sec)
+mysql> SELECT user FROM user;
++------------------+
+| user             |
++------------------+
+| debian-sys-maint |
+| mysql.session    |
+| mysql.sys        |
+| root             |
++------------------+
+4 rows in set (0.00 sec)
+
+mysql> SELECT user FROM user;
++------------------+
+| user             |
++------------------+
+| agarner-2        |
+| debian-sys-maint |
+| mysql.session    |
+| mysql.sys        |
+| root             |
++------------------+
+5 rows in set (0.01 sec)
+mysql> GRANT ALL PRIVILEGES ON AshlysDatabase.* TO 'agarner-2'@'localhost' IDENTIFIED BY 'pineapples';
+Query OK, 0 rows affected, 1 warning (0.20 sec)
+
+mysql> SHOW GRANTS FOR 'agarner-2'@'localhost';
++-----------------------------------------------------------------------+
+| Grants for agarner-2@localhost                                        |
++-----------------------------------------------------------------------+
+| GRANT USAGE ON *.* TO 'agarner-2'@'localhost'                         |
+| GRANT ALL PRIVILEGES ON `AshlysDatabase`.* TO 'agarner-2'@'localhost' |
++-----------------------------------------------------------------------+
+2 rows in set (0.39 sec)
+
+mysql> GRANT ALL PRIVILEGES ON AshlysDatabase.AshlysMusicList TO 'agarner-2'@'localhost' IDENTIFIED BY 'pineapples';
+Query OK, 0 rows affected, 1 warning (0.05 sec)
+
+mysql> SHOW GRANTS FOR 'agarner-2'@'localhost';
++---------------------------------------------------------------------------------------+
+| Grants for agarner-2@localhost                                                        |
++---------------------------------------------------------------------------------------+
+| GRANT USAGE ON *.* TO 'agarner-2'@'localhost'                                         |
+| GRANT ALL PRIVILEGES ON `AshlysDatabase`.`AshlysMusicList` TO 'agarner-2'@'localhost' |
++---------------------------------------------------------------------------------------+
+2 rows in set (0.00 sec)
+
+mysql> SELECT user FROM user;
++------------------+
+| user             |
++------------------+         
+| agarner-2        |      
+| debian-sys-maint |
+| mysql.session    |
+| mysql.sys        |
+| root             |
++------------------+
+5 rows in set (0.01 sec)
+
+
+mysql> CREATE USER 'ash-garn'@'localhost' IDENTIFIED BY 'user_password';
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> SELECT user FROM user;
++------------------+
+| user             |
++------------------+
+| agarner-2        |       
+| ash-garn         |
+| debian-sys-maint |
+| mysql.session    |
+| mysql.sys        |
+| root             |
++------------------+
+6 rows in set (0.00 sec)
+
+mysql> GRANT SELECT ON AshlysClassicHits.* TO 'ash-garn'@'localhost';
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> SHOW GRANTS FOR 'ash-garn'@'localhost';
++-----------------------------------------------------------------+
+| Grants for ash-garn@localhost                                   |
++-----------------------------------------------------------------+
+| GRANT USAGE ON *.* TO 'ash-garn'@'localhost'                    |
+| GRANT SELECT ON `AshlysClassicHits`.* TO 'ash-garn'@'localhost' |
++-----------------------------------------------------------------+
 2 rows in set (0.00 sec)
 
 mysql>
