@@ -231,10 +231,6 @@ ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that 
 mysql> ALTER TABLE AshlysClassicHits;
 Query OK, 0 rows affected (0.00 sec)
 
-mysql> ADD YearReleased INT;
-ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax
-mysql> ADD YearReleased INT(11) NOT NULL;
-ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax
 mysql> ALTER TABLE AshlysClassicHits ADD YearReleased INT NOT NULL;
 Query OK, 7 rows affected (0.30 sec)
 Records: 7  Duplicates: 0  Warnings: 0
@@ -268,4 +264,211 @@ mysql> SHOW TABLES;
 +--------------------------+
 2 rows in set (0.00 sec)
 
-mysql>
+mysql> SELECT * FROM AshlysClassicHits UNION SELECT * FROM AshlysMusicList;
++--------+--------------------------------+---------------------------------+-----------------------------------------+-------------+
+| SongID | ArtistID                       | SongTit2                        | AlbumTit2                               | AlbumRating |
++--------+--------------------------------+---------------------------------+-----------------------------------------+-------------+
+| 1      | Lady Gaga                      | La Vie En Rose                  | A Star Is Born                          |           3 |
+| 2      | Louis Armstrong                | La Vie En Rose                  | C'Est Si Bon                            |           3 |
+| 3      | Nat King Cole                  | L-O-V-E                         | L-O-V-E                                 |           2 |
+| 4      | Aretha Franklin                | You Send Me                     | Aretha Now                              |           2 |
+| 5      | Harold Melvin & The Blue Notes | I Miss You                      | Harold Melvin & The Blue Notes          |           8 |
+| 6      | Al Green                       | How Can You Mend A Broken Heart | Let's Stay Together                     |           7 |
+| 7      | Louis Armstrong                | Dream A Little Dream Of Me      | What A Wonderful World                  |           3 |
+| 8      | Marvin Gaye                    | Ain't No Mountain High Enough   | United                                  |           2 |
+| 9      | Stevie Wonder                  | Sir Duke                        | Stevie Wonder At The Close Of A Century |           4 |
+| 10     | Nina Simone                    | Feeling Good                    | Gold                                    |           3 |
+| 11     | Al Green                       | Love and Happiness              | I'm Still In Love With You              |           5 |
+| 1      | Drake                          | Emotionless                     | Scorpion                                |           5 |
+| 2      | H.E.R                          | Jungle                          | H.E.R                                   |           5 |
+| 3      | Teyana Taylor                  | Gonna Love Me                   | K.T.S.E.                                |           2 |
+| 4      | Megan Thee Stallion            | Big Ole Freak                   | Tina Snow                               |           3 |
+| 5      | Chance The Rapper              | I Might Need Security           | Chance The Rapper                       |           4 |
+| 6      | Queen Naija                    | Medicine                        | Queen Naija EP                          |           3 |
+| 7      | Drake                          | Money In The Grave              | Scorpion                                |           3 |
+| 8      | H.E.R                          | Every Kind Of Way               | H.E.R                                   |           2 |
+| 9      | Ella Mai                       | Trip                            | Ella Mai                                |           3 |
+| 10     | Ciara                          | Body Party                      | Ciara                                   |           4 |
+| 11     | Ludacris ft Miguel             | Good Lovin                      | Ludaversal                              |           3 |
+| 12     | Ella Mai                       | She Don't                       | Time                                    |           4 |
+| 13     | Jacob Banks                    | Chainsmoking                    | Village As Told By Jacob Banks          |           3 |
+| 14     | Drake                          | Nice For What                   | Scorpion                                |           3 |
+| 15     | N.E.R.D & Rihanna              | Lemon                           | No One Ever Really Dies                 |           3 |
+| 16     | DaBaby                         | Suge                            | Baby On Baby                            |           2 |
+| 17     | PARTYNEXTDOOR                  | Peace Of Mind                   | Colours 2                               |           5 |
+| 18     | Beyonce                        | All NIght                       | Lemonade                                |           5 |
+| 19     | Meek Mills ft Drake            | Going Bad                       | Championships                           |           3 |
+| 20     | City Girls                     | Act Up                          | Girl Code                               |           2 |
+| 21     | Drake                          | Girls Need Love                 | Last Day Of Summer                      |           5 |
+| 22     | Drake                          | How Bout Now                    | 6 God                                   |           4 |
++--------+--------------------------------+---------------------------------+-----------------------------------------+-------------+
+33 rows in set (0.00 sec)
+mysql> INSERT INTO AshlysMusicList SELECT * FROM AshlysClassicHits;
+Query OK, 11 rows affected (0.27 sec)
+Records: 11  Duplicates: 0  Warnings: 0
+
+mysql> SELECT * FROM AshlysMusicList;
++----------+--------------------------------+---------------------------------+-----------------------------------------+------------+
+| personID | artist                         | SongTitle                       | AlbumTitle                              | SongRating |
++----------+--------------------------------+---------------------------------+-----------------------------------------+------------+
+|        1 | Drake                          | Emotionless                     | Scorpion                                |          5 |
+|        2 | H.E.R                          | Jungle                          | H.E.R                                   |          5 |
+|        3 | Teyana Taylor                  | Gonna Love Me                   | K.T.S.E.                                |          2 |
+|        4 | Megan Thee Stallion            | Big Ole Freak                   | Tina Snow                               |          3 |
+|        5 | Chance The Rapper              | I Might Need Security           | Chance The Rapper                       |          4 |
+|        6 | Queen Naija                    | Medicine                        | Queen Naija EP                          |          3 |
+|        7 | Drake                          | Money In The Grave              | Scorpion                                |          3 |
+|        8 | H.E.R                          | Every Kind Of Way               | H.E.R                                   |          2 |
+|        9 | Ella Mai                       | Trip                            | Ella Mai                                |          3 |
+|       10 | Ciara                          | Body Party                      | Ciara                                   |          4 |
+|       11 | Ludacris ft Miguel             | Good Lovin                      | Ludaversal                              |          3 |
+|       12 | Ella Mai                       | She Don't                       | Time                                    |          4 |
+|       13 | Jacob Banks                    | Chainsmoking                    | Village As Told By Jacob Banks          |          3 |
+|       14 | Drake                          | Nice For What                   | Scorpion                                |          3 |
+|       15 | N.E.R.D & Rihanna              | Lemon                           | No One Ever Really Dies                 |          3 |
+|       16 | DaBaby                         | Suge                            | Baby On Baby                            |          2 |
+|       17 | PARTYNEXTDOOR                  | Peace Of Mind                   | Colours 2                               |          5 |
+|       18 | Beyonce                        | All NIght                       | Lemonade                                |          5 |
+|       19 | Meek Mills ft Drake            | Going Bad                       | Championships                           |          3 |
+|       20 | City Girls                     | Act Up                          | Girl Code                               |          2 |
+|       21 | Drake                          | Girls Need Love                 | Last Day Of Summer                      |          5 |
+|       22 | Drake                          | How Bout Now                    | 6 God                                   |          4 |
+|        1 | Lady Gaga                      | La Vie En Rose                  | A Star Is Born                          |          3 |
+|        2 | Louis Armstrong                | La Vie En Rose                  | C'Est Si Bon                            |          3 |
+|        3 | Nat King Cole                  | L-O-V-E                         | L-O-V-E                                 |          2 |
+|        4 | Aretha Franklin                | You Send Me                     | Aretha Now                              |          2 |
+|        5 | Harold Melvin & The Blue Notes | I Miss You                      | Harold Melvin & The Blue Notes          |          8 |
+|        6 | Al Green                       | How Can You Mend A Broken Heart | Let's Stay Together                     |          7 |
+|        7 | Louis Armstrong                | Dream A Little Dream Of Me      | What A Wonderful World                  |          3 |
+|        8 | Marvin Gaye                    | Ain't No Mountain High Enough   | United                                  |          2 |
+|        9 | Stevie Wonder                  | Sir Duke                        | Stevie Wonder At The Close Of A Century |          4 |
+|       10 | Nina Simone                    | Feeling Good                    | Gold                                    |          3 |
+|       11 | Al Green                       | Love and Happiness              | I'm Still In Love With You              |          5 |
++----------+--------------------------------+---------------------------------+-----------------------------------------+------------+
+33 rows in set (0.00 sec)
+
+mysql> SELECT * FROM AshlysMusicList ORDER BY artist;
++----------+--------------------------------+---------------------------------+-----------------------------------------+------------+
+| personID | artist                         | SongTitle                       | AlbumTitle                              | SongRating |
++----------+--------------------------------+---------------------------------+-----------------------------------------+------------+
+|       11 | Al Green                       | Love and Happiness              | I'm Still In Love With You              |          5 |
+|        6 | Al Green                       | How Can You Mend A Broken Heart | Let's Stay Together                     |          7 |
+|        4 | Aretha Franklin                | You Send Me                     | Aretha Now                              |          2 |
+|       18 | Beyonce                        | All NIght                       | Lemonade                                |          5 |
+|        5 | Chance The Rapper              | I Might Need Security           | Chance The Rapper                       |          4 |
+|       10 | Ciara                          | Body Party                      | Ciara                                   |          4 |
+|       20 | City Girls                     | Act Up                          | Girl Code                               |          2 |
+|       16 | DaBaby                         | Suge                            | Baby On Baby                            |          2 |
+|        1 | Drake                          | Emotionless                     | Scorpion                                |          5 |
+|        7 | Drake                          | Money In The Grave              | Scorpion                                |          3 |
+|       22 | Drake                          | How Bout Now                    | 6 God                                   |          4 |
+|       21 | Drake                          | Girls Need Love                 | Last Day Of Summer                      |          5 |
+|       14 | Drake                          | Nice For What                   | Scorpion                                |          3 |
+|        9 | Ella Mai                       | Trip                            | Ella Mai                                |          3 |
+|       12 | Ella Mai                       | She Don't                       | Time                                    |          4 |
+|        2 | H.E.R                          | Jungle                          | H.E.R                                   |          5 |
+|        8 | H.E.R                          | Every Kind Of Way               | H.E.R                                   |          2 |
+|        5 | Harold Melvin & The Blue Notes | I Miss You                      | Harold Melvin & The Blue Notes          |          8 |
+|       13 | Jacob Banks                    | Chainsmoking                    | Village As Told By Jacob Banks          |          3 |
+|        1 | Lady Gaga                      | La Vie En Rose                  | A Star Is Born                          |          3 |
+|        2 | Louis Armstrong                | La Vie En Rose                  | C'Est Si Bon                            |          3 |
+|        7 | Louis Armstrong                | Dream A Little Dream Of Me      | What A Wonderful World                  |          3 |
+|       11 | Ludacris ft Miguel             | Good Lovin                      | Ludaversal                              |          3 |
+|        8 | Marvin Gaye                    | Ain't No Mountain High Enough   | United                                  |          2 |
+|       19 | Meek Mills ft Drake            | Going Bad                       | Championships                           |          3 |
+|        4 | Megan Thee Stallion            | Big Ole Freak                   | Tina Snow                               |          3 |
+|       15 | N.E.R.D & Rihanna              | Lemon                           | No One Ever Really Dies                 |          3 |
+|        3 | Nat King Cole                  | L-O-V-E                         | L-O-V-E                                 |          2 |
+|       10 | Nina Simone                    | Feeling Good                    | Gold                                    |          3 |
+|       17 | PARTYNEXTDOOR                  | Peace Of Mind                   | Colours 2                               |          5 |
+|        6 | Queen Naija                    | Medicine                        | Queen Naija EP                          |          3 |
+|        9 | Stevie Wonder                  | Sir Duke                        | Stevie Wonder At The Close Of A Century |          4 |
+|        3 | Teyana Taylor                  | Gonna Love Me                   | K.T.S.E.                                |          2 |
++----------+--------------------------------+---------------------------------+-----------------------------------------+------------+
+33 rows in set (0.00 sec)
+mysql> SELECT user FROM user;
++------------------+
+| user             |
++------------------+
+| debian-sys-maint |
+| mysql.session    |
+| mysql.sys        |
+| root             |
++------------------+
+4 rows in set (0.00 sec)
+
+mysql> SELECT user FROM user;
++------------------+
+| user             |
++------------------+
+| agarner-2        |
+| debian-sys-maint |
+| mysql.session    |
+| mysql.sys        |
+| root             |
++------------------+
+5 rows in set (0.01 sec)
+mysql> GRANT ALL PRIVILEGES ON AshlysDatabase.* TO 'agarner-2'@'localhost' IDENTIFIED BY 'pineapples';
+Query OK, 0 rows affected, 1 warning (0.20 sec)
+
+mysql> SHOW GRANTS FOR 'agarner-2'@'localhost';
++-----------------------------------------------------------------------+
+| Grants for agarner-2@localhost                                        |
++-----------------------------------------------------------------------+
+| GRANT USAGE ON *.* TO 'agarner-2'@'localhost'                         |
+| GRANT ALL PRIVILEGES ON `AshlysDatabase`.* TO 'agarner-2'@'localhost' |
++-----------------------------------------------------------------------+
+2 rows in set (0.39 sec)
+
+mysql> GRANT ALL PRIVILEGES ON AshlysDatabase.AshlysMusicList TO 'agarner-2'@'localhost' IDENTIFIED BY 'pineapples';
+Query OK, 0 rows affected, 1 warning (0.05 sec)
+
+mysql> SHOW GRANTS FOR 'agarner-2'@'localhost';
++---------------------------------------------------------------------------------------+
+| Grants for agarner-2@localhost                                                        |
++---------------------------------------------------------------------------------------+
+| GRANT USAGE ON *.* TO 'agarner-2'@'localhost'                                         |
+| GRANT ALL PRIVILEGES ON `AshlysDatabase`.`AshlysMusicList` TO 'agarner-2'@'localhost' |
++---------------------------------------------------------------------------------------+
+2 rows in set (0.00 sec)
+
+mysql> SELECT user FROM user;
++------------------+
+| user             |
++------------------+         
+| agarner-2        |      
+| debian-sys-maint |
+| mysql.session    |
+| mysql.sys        |
+| root             |
++------------------+
+5 rows in set (0.01 sec)
+
+
+mysql> CREATE USER 'ash-garn'@'localhost' IDENTIFIED BY 'user_password';
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> SELECT user FROM user;
++------------------+
+| user             |
++------------------+
+| agarner-2        |       
+| ash-garn         |
+| debian-sys-maint |
+| mysql.session    |
+| mysql.sys        |
+| root             |
++------------------+
+6 rows in set (0.00 sec)
+
+mysql> GRANT SELECT ON AshlysClassicHits.* TO 'ash-garn'@'localhost';
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> SHOW GRANTS FOR 'ash-garn'@'localhost';
++-----------------------------------------------------------------+
+| Grants for ash-garn@localhost                                   |
++-----------------------------------------------------------------+
+| GRANT USAGE ON *.* TO 'ash-garn'@'localhost'                    |
+| GRANT SELECT ON `AshlysClassicHits`.* TO 'ash-garn'@'localhost' |
++-----------------------------------------------------------------+
+2 rows in set (0.00 sec)
